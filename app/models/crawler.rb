@@ -52,6 +52,35 @@ class Crawler
       update_data(get_data)
     end
 
+    # api configuration - get today's turnovers
+    def turnover_today
+      Turnover.where(
+        created_at: Time.now.beginning_of_day..Time.now.end_of_day
+      )
+    end
+    # api configuration - get all date
+    def turnover_date
+      Turnover.select('DISTINCT created_at')
+    end
+    # api configuration - sort date by stock code, date or both.
+    def sort_data(code, date)
+      if code.nil?
+        Turnover.where(
+          created_at: date.to_time.beginning_of_day..date.to_time.end_of_day
+        )
+      elsif date.nil?
+        Turnover.where(
+          stock_code: code
+        )
+      else
+        Turnover.where(
+          stock_code: code,
+          created_at: Time.now.beginning_of_day..Time.now.end_of_day
+        )
+      end
+    end
+
+
     private
 
     # Fetch and parse HTML document
