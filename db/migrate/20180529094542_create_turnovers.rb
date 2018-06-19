@@ -9,7 +9,7 @@ class CreateTurnovers < ActiveRecord::Migration
       t.float :stock_lowest_price
       t.float :stock_closing_yesterday
       t.float :stock_closing_today
-      t.integer :stock_volumn
+      t.string :stock_volumn
       t.float :stock_change
       t.string :stock_quote_change
 

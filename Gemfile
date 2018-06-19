@@ -48,3 +48,9 @@ gem 'whenever', require: false
 
 # A simple Angular.js wrapper for Rails
 gem 'angularjs-rails'
+
+# A testing framework for Rail
+group :test, :development do
+  gem "rspec-rails"
+  gem 'rspec-its'
+end 

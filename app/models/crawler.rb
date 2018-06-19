@@ -27,9 +27,9 @@ class Crawler
           elsif !fonts.empty? && fonts[0]['color'].index('#009900')
             -cells[9].text.strip[/[0-9|\.]+/].to_f
           else
-            0
+            0.0
           end
-        { stock_code: cells[1].text.strip,
+        { stock_code: cells[1].text.strip.to_i,
           stock_name: cells[2].text.strip,
           stock_company_url: company_url.strip,
           stock_opening_price: cells[3].text.strip.to_f,
