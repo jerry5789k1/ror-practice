@@ -19,6 +19,14 @@ $go-down: #5CAB7D;
       }
     }
   }
+  .error {
+    margin: 1em auto;
+    padding: .5em;
+    border-radius: 5px;
+    border: 1px solid $go-up;
+    background: lighten($go-up, 5%);
+    color: #fff;
+  }
   .filter {
     margin-top: 1.5em;
     &__wrapper {

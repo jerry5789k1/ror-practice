@@ -52,5 +52,5 @@ gem 'angularjs-rails'
 # A testing framework for Rail
 group :test, :development do
   gem "rspec-rails"
-  gem 'rspec-its'
+  gem "jasmine"
 end 

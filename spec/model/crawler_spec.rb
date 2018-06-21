@@ -1,6 +1,4 @@
 require 'rails_helper'
-require 'rspec/its'
-require 'Crawler.rb'
 
 RSpec.describe Crawler, :type => :model do
   describe '.get_data' do

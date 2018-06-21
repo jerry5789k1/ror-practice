@@ -1,4 +1,3 @@
-
 let stockModule = angular.module('stockApp', []);
 
 // service: set API path
@@ -39,6 +38,8 @@ stockModule.controller('stockTable', function ($scope, dataService) {
 
     // stock code dropdown select data
     $scope.allStockCode = $scope.turnoversByDate.map(stock => stock.stock_code);
+  }).catch(function () {
+    $scope.errorMsg = 'API service error'
   });
 
   // date dropdown select onchange event
@@ -46,11 +47,11 @@ stockModule.controller('stockTable', function ($scope, dataService) {
   $scope.dateSelected = function () {
     dataService.getByDate($scope.date).then(function (response) {
       $scope.turnoversByDate = response.data.data
-    });
-    // reset stock code dropdown select
+    })
     // reset volumn rank dropdown select
-    $scope.code = null;
+    // reset stock code dropdown select
     $scope.volumnRank = null;
+    $scope.code = null;
   };
 
   // stock code dropdown select onchange event
@@ -71,7 +72,7 @@ stockModule.controller('stockTable', function ($scope, dataService) {
 stockModule.controller('stockTableByCode', function ($scope, $location, dataService) {
   $scope.thNames = [
     '排', '日期', '名稱', '開盤價', '最高價', '最低價', '昨收盤', '今收盤', '成交量', '漲跌', '漲跌幅'
-  ]
+  ];
   $scope.codePath = $location.absUrl().match(/([^\/]*)\/*$/)[1];
   dataService.getByCode($scope.codePath).then(function (response) {
     $scope.todaysTurnovers = response.data.data;

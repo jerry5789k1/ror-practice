@@ -1,4 +1,6 @@
 StockApiServer::Application.routes.draw do
+  mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
+
   resources :board, only: [:index, :show] do
   end
   # API routes
