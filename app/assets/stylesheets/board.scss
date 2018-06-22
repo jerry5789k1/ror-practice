@@ -1,21 +1,18 @@
-
 $grey-color: #f8f8f8;
 $main-color: #2F49B9;
 $text-color: #333333;
-$go-up: #FF4A1C;
-$go-down: #5CAB7D;
+$stock-red: #FF4A1C;
+$stock-green: #5CAB7D;
 
-.container {
-  header {
-    padding: 1em 0;
-    border-bottom: 1px solid #f7f7f7;
-    h1 {
-      a {
-        color: $text-color;
-        text-decoration: none;
-        &:hover {
-          color: $main-color;
-        }
+header {
+  padding: 1em 0;
+  border-bottom: 1px solid #f7f7f7;
+  h1 {
+    a {
+      color: $text-color;
+      text-decoration: none;
+      &:hover {
+        color: $main-color;
       }
     }
   }
@@ -39,49 +36,49 @@ $go-down: #5CAB7D;
       }
     }
   }
-  .board-table {
-    &__wrapper {
-      margin: 1.5em auto;
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        text-align: center;
-        thead {
-          border-bottom: 1px solid $grey-color;
-          th {
-            padding: .5em 1em;
-          }
+}
+.board-table {
+  &__wrapper {
+    margin: 1.5em auto;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      thead {
+        border-bottom: 1px solid $grey-color;
+        th {
+          padding: .5em 1em;
         }
-        tbody {
-          tr {
-            border-bottom: 1px solid $grey-color;
-            &:last-child {
-              border-bottom: none;
+      }
+      tbody {
+        tr {
+          border-bottom: 1px solid $grey-color;
+          &:last-child {
+            border-bottom: none;
+          }
+          &:hover {
+            background: $grey-color;
+          }
+          td {
+            padding: .5em 1em;
+            &:not(:nth-child(-n+3)) {
+              text-align: right;
             }
-            &:hover {
-              background: $grey-color;
+            a {
+              color: $text-color;
+              &:hover {
+                color: $main-color;
+              }
             }
-            td {
-              padding: .5em 1em;
-              &:not(:nth-child(-n+3)) {
-                text-align: right;
+            div {
+              max-width: 55px;
+              display: flex;
+              justify-content: space-between;
+              &.go-up {
+                color: $stock-red;
               }
-              a {
-                color: $text-color;
-                &:hover {
-                  color: $main-color;
-                }
-              }
-              div {
-                max-width: 55px;
-                display: flex;
-                justify-content: space-between;
-                &.go-up {
-                  color: $go-up;
-                }
-                &.go-down {
-                  color: $go-down;
-                }
+              &.go-down {
+                color: $stock-green;
               }
             }
           }
@@ -90,3 +87,4 @@ $go-down: #5CAB7D;
     }
   }
 }
+
