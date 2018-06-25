@@ -51,6 +51,7 @@ gem 'angularjs-rails'
 
 # A testing framework for Rail
 group :test, :development do
-  gem "rspec-rails"
-  gem "jasmine"
+  gem 'rspec-rails'
+  gem 'jasmine'
+  gem 'factory_bot_rails'
 end 
