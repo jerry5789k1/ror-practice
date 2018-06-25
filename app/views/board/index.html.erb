@@ -11,7 +11,7 @@
         <li>
           <h5>日期</h5>
           <select ng-model="date" 
-                  ng-change="dateSelected()">
+                  ng-change="dateSelected(date)">
             <option 
               ng-value="date" 
               ng-repeat="(key, date) in turnoversDate  | orderBy:'created_at':true">
@@ -30,7 +30,7 @@
           <h5>代號</h5>
           <select ng-model="code" 
                   ng-options="stock for stock in allStockCode" 
-                  ng-change="codeSelected()">
+                  ng-change="codeSelected(data, code)">
             <option value="">全部</option>
           </select>
         </li>

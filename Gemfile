@@ -49,9 +49,14 @@ gem 'whenever', require: false
 # A simple Angular.js wrapper for Rails
 gem 'angularjs-rails'
 
+# Adds your HTML templates into Angular
+gem 'angular-rails-templates'
+
 # A testing framework for Rail
 group :test, :development do
   gem 'rspec-rails'
   gem 'jasmine'
   gem 'factory_bot_rails'
 end 
+
+

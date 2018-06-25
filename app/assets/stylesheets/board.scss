@@ -16,23 +16,23 @@ header {
       }
     }
   }
-  .error {
-    margin: 1em auto;
-    padding: .5em;
-    border-radius: 5px;
-    border: 1px solid $go-up;
-    background: lighten($go-up, 5%);
-    color: #fff;
-  }
-  .filter {
-    margin-top: 1.5em;
-    &__wrapper {
-      ul {
-        li {
-          display: inline-block;
-          min-width: 130px;
-          margin-right: .5em;
-        }
+}
+.error {
+  margin: 1em auto;
+  padding: .5em;
+  border-radius: 5px;
+  border: 1px solid $stock-red;
+  background: lighten($stock-red, 5%);
+  color: #fff;
+}
+.filter {
+  margin-top: 1.5em;
+  &__wrapper {
+    ul {
+      li {
+        display: inline-block;
+        min-width: 130px;
+        margin-right: .5em;
       }
     }
   }

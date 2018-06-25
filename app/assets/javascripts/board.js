@@ -1,8 +1,8 @@
-let stockModule = angular.module('stockApp', []);
+let stockModule = angular.module('stockApp', ['templates']);
 
 // service: set API path
 stockModule.service('dataService', function ($http) {
-  let urlBase = '/api/v1/stocks';
+  const urlBase = '/api/v1/stocks';
   this.getToday = function () {
     return $http.get(urlBase);
   };
@@ -33,8 +33,8 @@ stockModule.controller('stockTable', function ($scope, dataService) {
     $scope.turnoversDate = [...new Set(allDate.map(date => date.created_at.substring(0, 10)))];
     $scope.date = $scope.turnoversDate.slice(-1)[0];
 
-    // init volumn rank dropdown select
-    $scope.volumnRank = null;
+    // reset dropdown select
+    resetDropdown();
 
     // stock code dropdown select data
     $scope.allStockCode = $scope.turnoversByDate.map(stock => stock.stock_code);
@@ -44,20 +44,18 @@ stockModule.controller('stockTable', function ($scope, dataService) {
 
   // date dropdown select onchange event
   // sort by date
-  $scope.dateSelected = function () {
-    dataService.getByDate($scope.date).then(function (response) {
+  $scope.dateSelected = function (date) {
+    dataService.getByDate(date).then(function (response) {
       $scope.turnoversByDate = response.data.data
-    })
-    // reset volumn rank dropdown select
-    // reset stock code dropdown select
-    $scope.volumnRank = null;
-    $scope.code = null;
+    });
+    // reset dropdown select
+    resetDropdown();
   };
 
   // stock code dropdown select onchange event
   // sort by date and stock code
-  $scope.codeSelected = function () {
-    if (!$scope.code) {
+  $scope.codeSelected = function (data, code) {
+    if (!code) {
       $scope.dateSelected();
     } else {
       dataService.getByDateCode($scope.date, $scope.code).then(function (response) {
@@ -65,6 +63,13 @@ stockModule.controller('stockTable', function ($scope, dataService) {
       });
     }
   };
+
+  // reset stock code and volumn rank dropdown select
+  let resetDropdown = function () {
+    $scope.code = null;
+    $scope.volumnRank = null;
+  }
+
 });
 
 // show, path:/board/XXXX
@@ -83,13 +88,7 @@ stockModule.controller('stockTableByCode', function ($scope, $location, dataServ
 stockModule.directive('headTitle', function () {
   return {
     restrict: 'E',
-    template: `
-      <div class="width-wrapper">
-        <h1>
-          <a href="/">Stock Board</a>
-          <span ng-if="codePath"> - 代號 {{ codePath }} <span>
-        </h1>
-      </div>`,
+    templateUrl: 'header.html'
   };
 });
 // template: common table
@@ -102,52 +101,6 @@ stockModule.directive('customTable', function () {
       order: '=',
       codePath: '='
     },
-    template: `
-    <table>
-        <thead>
-          <tr>
-            <th ng-repeat="thName in thNames">{{ thName }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="(key, todaysTurnover) in  turnoversName | orderBy: order">
-            <td>{{ key+1 }}</td>
-            <td ng-if="!codePath">
-              <a ng-href="/board/{{ todaysTurnover.stock_code }}" target="_blank">
-                {{ todaysTurnover.stock_code }}
-              </a>
-            </td>
-            <td ng-if="codePath">
-              {{ todaysTurnover.created_at | date:'yyyy-MM-dd'}}
-            </td>
-            <td>
-              <a ng-href="{{ todaysTurnover.stock_company_url }}" target="_blank">
-                {{ todaysTurnover.stock_name }}
-              </a>
-            </td>
-            <td>{{ todaysTurnover.stock_opening_price }}</td>
-            <td>{{ todaysTurnover.stock_highest_price }}</td>
-            <td>{{ todaysTurnover.stock_lowest_price }}</td>
-            <td>{{ todaysTurnover.stock_closing_yesterday }}</td>
-            <td>{{ todaysTurnover.stock_closing_today }}</td>
-            <td>{{ todaysTurnover.stock_volumn }}</td>
-            <td>
-              <div class= "go-up" ng-if="todaysTurnover.stock_change > 0">
-                <font>▲</font>
-                <font>{{ todaysTurnover.stock_change }}</font>
-              </div>
-              <div class= "go-down" ng-if="todaysTurnover.stock_change < 0">
-                <font>▼</font>
-                <font>{{ todaysTurnover.stock_change }}</font>
-              </div>
-              <div ng-if="todaysTurnover.stock_change == 0">
-                <font>－</font>
-                <font>{{ todaysTurnover.stock_change }}</font>
-              </div>
-            </td>
-            <td>{{ todaysTurnover.stock_quote_change }}％</td>
-          </tr>
-        </tbody>
-      </table>`
+    templateUrl: 'table.html'
   };
 });

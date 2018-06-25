@@ -1,0 +1,46 @@
+<table>
+  <thead>
+    <tr>
+      <th ng-repeat="thName in thNames">{{ thName }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="(key, todaysTurnover) in  turnoversName | orderBy: order">
+      <td>{{ key+1 }}</td>
+      <td ng-if="!codePath">
+        <a ng-href="/board/{{ todaysTurnover.stock_code }}" target="_blank">
+          {{ todaysTurnover.stock_code }}
+        </a>
+      </td>
+      <td ng-if="codePath">
+        {{ todaysTurnover.created_at | date:'yyyy-MM-dd'}}
+      </td>
+      <td>
+        <a ng-href="{{ todaysTurnover.stock_company_url }}" target="_blank">
+          {{ todaysTurnover.stock_name }}
+        </a>
+      </td>
+      <td>{{ todaysTurnover.stock_opening_price }}</td>
+      <td>{{ todaysTurnover.stock_highest_price }}</td>
+      <td>{{ todaysTurnover.stock_lowest_price }}</td>
+      <td>{{ todaysTurnover.stock_closing_yesterday }}</td>
+      <td>{{ todaysTurnover.stock_closing_today }}</td>
+      <td>{{ todaysTurnover.stock_volumn }}</td>
+      <td>
+        <div class="go-up" ng-if="todaysTurnover.stock_change > 0">
+          <font>▲</font>
+          <font>{{ todaysTurnover.stock_change }}</font>
+        </div>
+        <div class="go-down" ng-if="todaysTurnover.stock_change < 0">
+          <font>▼</font>
+          <font>{{ todaysTurnover.stock_change }}</font>
+        </div>
+        <div ng-if="todaysTurnover.stock_change == 0">
+          <font>－</font>
+          <font>{{ todaysTurnover.stock_change }}</font>
+        </div>
+      </td>
+      <td>{{ todaysTurnover.stock_quote_change }}％</td>
+    </tr>
+  </tbody>
+</table>
