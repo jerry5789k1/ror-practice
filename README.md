@@ -17,6 +17,7 @@ Parsing daily top 50 turnover from  [聚財網](https://stock.wearn.com/qua.asp)
 - [whenever](https://github.com/javan/whenever): Cron jobs in Ruby
 - [rspec-rails](https://github.com/rspec/rspec-rails): Testing framework for Rails
 - [jasmine](https://github.com/jasmine/jasmine-gem): Testing framework for Angular
+- [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails): Testing with fake data
 
 ## Testing
 
