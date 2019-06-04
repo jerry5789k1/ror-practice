@@ -1,7 +1,11 @@
 RorPractice::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
-
+  root :to => 'turnovers#index'
+  
+  scope '/api' do 
+    get 'getAllTurnoverRecords' => 'turnovers#show'
+  end
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
