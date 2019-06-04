@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20190603073353) do
+ActiveRecord::Schema.define(:version => 20190604015205) do
+
+  create_table "trunovers", :force => true do |t|
+    t.string   "stock_code"
+    t.string   "stock_name"
+    t.string   "stock_company_url"
+    t.float    "stock_opening_price"
+    t.float    "stock_day_high"
+    t.float    "stock_day_low"
+    t.float    "stock_closing_price_yesterday"
+    t.float    "stock_closing_price_today"
+    t.string   "stock_volume"
+    t.float    "stock_change"
+    t.float    "stock_quote_change"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
 
   create_table "turnovers", :force => true do |t|
     t.integer  "stock_code"
