@@ -12634,3 +12634,1143 @@ Started GET "/api/getFilterTurnOverData" for 127.0.0.1 at 2019-06-05 10:27:48 +0
 Processing by TurnoversController#filter as HTML
   [1m[35mTurnover Load (0.1ms)[0m  SELECT "turnovers".* FROM "turnovers" WHERE (("turnovers"."created_at" BETWEEN '2019-06-04 00:00:00.000000' AND '2019-06-04 23:59:59.999999' AND "turnovers"."stock_code" = 2339))
 Completed 200 OK in 2.2ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/getFilterTurnOverData" for 127.0.0.1 at 2019-06-05 10:42:17 +0800
+Processing by TurnoversController#filter as HTML
+Completed 500 Internal Server Error in 1.3ms
+
+NoMethodError (undefined method `to_time' for nil:NilClass
+Did you mean?  to_i):
+  app/models/turnover.rb:19:in `filter_turnover_record'
+  app/controllers/turnovers_controller.rb:12:in `filter'
+
+
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.9ms)
+
+
+Started GET "/api/getFilterTurnOverData/date/code/2337" for 127.0.0.1 at 2019-06-05 10:43:31 +0800
+
+ActionController::RoutingError (No route matches [GET] "/api/getFilterTurnOverData/date/code/2337"):
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.1) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.1) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.1) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/2.3.0/webrick/server.rb:314:in `block in start_thread'
+
+
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/api/getFilterTurnOverData/date/2019-6-4/code/2337" for 127.0.0.1 at 2019-06-05 10:43:47 +0800
+Processing by TurnoversController#filter as HTML
+  Parameters: {"date"=>"2019-6-4", "code"=>"2337"}
+  [1m[36mTurnover Load (0.2ms)[0m  [1mSELECT "turnovers".* FROM "turnovers" WHERE (("turnovers"."created_at" BETWEEN '2019-06-04 00:00:00.000000' AND '2019-06-04 23:59:59.999999' AND "turnovers"."stock_code" = 2337))[0m
+Completed 200 OK in 10.9ms (Views: 9.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/getFilterTurnOverData/date/2019-6-5/code/2337" for 127.0.0.1 at 2019-06-05 10:44:01 +0800
+Processing by TurnoversController#filter as HTML
+  Parameters: {"date"=>"2019-6-5", "code"=>"2337"}
+  [1m[35mTurnover Load (0.2ms)[0m  SELECT "turnovers".* FROM "turnovers" WHERE (("turnovers"."created_at" BETWEEN '2019-06-05 00:00:00.000000' AND '2019-06-05 23:59:59.999999' AND "turnovers"."stock_code" = 2337))
+Completed 200 OK in 3.2ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/getAllTurnOverData" for 127.0.0.1 at 2019-06-05 10:44:15 +0800
+Processing by TurnoversController#show as HTML
+  [1m[36mTurnover Load (0.2ms)[0m  [1mSELECT "turnovers".* FROM "turnovers" WHERE "turnovers"."created_at" BETWEEN '2019-06-04 16:00:00.000000' AND '2019-06-05 15:59:59.999999'[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 21], ["stock_closing_price_yesterday", 20], ["stock_code", 2337], ["stock_company_url", "https://stock.wearn.com/a2337.html"], ["stock_day_high", 21], ["stock_day_low", 21], ["stock_name", "旺宏"], ["stock_opening_price", 21], ["stock_quote_change", 1], ["stock_volume", 51], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 13], ["stock_closing_price_yesterday", 13], ["stock_code", 2303], ["stock_company_url", "https://stock.wearn.com/a2303.html"], ["stock_day_high", 13], ["stock_day_low", 12], ["stock_name", "聯電"], ["stock_opening_price", 13], ["stock_quote_change", -1], ["stock_volume", 41], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 71], ["stock_closing_price_yesterday", 73], ["stock_code", 2317], ["stock_company_url", "https://stock.wearn.com/a2317.html"], ["stock_day_high", 73], ["stock_day_low", 71], ["stock_name", "鴻海"], ["stock_opening_price", 73], ["stock_quote_change", -2], ["stock_volume", 39], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 19], ["stock_closing_price_yesterday", 21], ["stock_code", 2371], ["stock_company_url", "https://stock.wearn.com/a2371.html"], ["stock_day_high", 21], ["stock_day_low", 19], ["stock_name", "大同"], ["stock_opening_price", 21], ["stock_quote_change", -8], ["stock_volume", 31], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 14], ["stock_closing_price_yesterday", 14], ["stock_code", 3049], ["stock_company_url", "https://stock.wearn.com/a3049.html"], ["stock_day_high", 14], ["stock_day_low", 14], ["stock_name", "和鑫"], ["stock_opening_price", 14], ["stock_quote_change", -2], ["stock_volume", 25], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 2], ["stock_closing_price_today", 178], ["stock_closing_price_yesterday", 176], ["stock_code", 3105], ["stock_company_url", "https://stock.wearn.com/a3105.html"], ["stock_day_high", 184], ["stock_day_low", 177], ["stock_name", "穩懋"], ["stock_opening_price", 178], ["stock_quote_change", 1], ["stock_volume", 25], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 32], ["stock_closing_price_yesterday", 32], ["stock_code", 3535], ["stock_company_url", "https://stock.wearn.com/a3535.html"], ["stock_day_high", 34], ["stock_day_low", 32], ["stock_name", "晶彩科"], ["stock_opening_price", 32], ["stock_quote_change", 2], ["stock_volume", 24], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 43], ["stock_closing_price_yesterday", 43], ["stock_code", 1101], ["stock_company_url", "https://stock.wearn.com/a1101.html"], ["stock_day_high", 44], ["stock_day_low", 43], ["stock_name", "台泥"], ["stock_opening_price", 43], ["stock_quote_change", 0], ["stock_volume", 23], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 30], ["stock_closing_price_yesterday", 31], ["stock_code", 2886], ["stock_company_url", "https://stock.wearn.com/a2886.html"], ["stock_day_high", 31], ["stock_day_low", 30], ["stock_name", "兆豐金"], ["stock_opening_price", 31], ["stock_quote_change", 0], ["stock_volume", 20], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 12], ["stock_closing_price_yesterday", 12], ["stock_code", 2890], ["stock_company_url", "https://stock.wearn.com/a2890.html"], ["stock_day_high", 12], ["stock_day_low", 12], ["stock_name", "永豐金"], ["stock_opening_price", 12], ["stock_quote_change", 0], ["stock_volume", 18], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 9], ["stock_closing_price_yesterday", 9], ["stock_code", 2883], ["stock_company_url", "https://stock.wearn.com/a2883.html"], ["stock_day_high", 9], ["stock_day_low", 9], ["stock_name", "開發金"], ["stock_opening_price", 9], ["stock_quote_change", 0], ["stock_volume", 17], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 17], ["stock_closing_price_yesterday", 17], ["stock_code", 2885], ["stock_company_url", "https://stock.wearn.com/a2885.html"], ["stock_day_high", 17], ["stock_day_low", 17], ["stock_name", "元大金"], ["stock_opening_price", 17], ["stock_quote_change", -1], ["stock_volume", 15], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 22], ["stock_closing_price_yesterday", 22], ["stock_code", 2892], ["stock_company_url", "https://stock.wearn.com/a2892.html"], ["stock_day_high", 22], ["stock_day_low", 22], ["stock_name", "第一金"], ["stock_opening_price", 22], ["stock_quote_change", 1], ["stock_volume", 14], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 16], ["stock_closing_price_yesterday", 16], ["stock_code", 1605], ["stock_company_url", "https://stock.wearn.com/a1605.html"], ["stock_day_high", 16], ["stock_day_low", 16], ["stock_name", "華新"], ["stock_opening_price", 16], ["stock_quote_change", 0], ["stock_volume", 13], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 124], ["stock_closing_price_yesterday", 125], ["stock_code", 3227], ["stock_company_url", "https://stock.wearn.com/a3227.html"], ["stock_day_high", 130], ["stock_day_low", 124], ["stock_name", "原相"], ["stock_opening_price", 126], ["stock_quote_change", 0], ["stock_volume", 13], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 23], ["stock_closing_price_yesterday", 23], ["stock_code", 2201], ["stock_company_url", "https://stock.wearn.com/a2201.html"], ["stock_day_high", 23], ["stock_day_low", 23], ["stock_name", "裕隆"], ["stock_opening_price", 23], ["stock_quote_change", 0], ["stock_volume", 12], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 14], ["stock_closing_price_yesterday", 14], ["stock_code", 2887], ["stock_company_url", "https://stock.wearn.com/a2887.html"], ["stock_day_high", 14], ["stock_day_low", 14], ["stock_name", "台新金"], ["stock_opening_price", 14], ["stock_quote_change", 0], ["stock_volume", 12], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 55], ["stock_closing_price_yesterday", 57], ["stock_code", 6147], ["stock_company_url", "https://stock.wearn.com/a6147.html"], ["stock_day_high", 57], ["stock_day_low", 55], ["stock_name", "頎邦"], ["stock_opening_price", 56], ["stock_quote_change", -2], ["stock_volume", 11], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", -6], ["stock_closing_price_today", 106], ["stock_closing_price_yesterday", 112], ["stock_code", 3630], ["stock_company_url", "https://stock.wearn.com/a3630.html"], ["stock_day_high", 113], ["stock_day_low", 106], ["stock_name", "新鉅科"], ["stock_opening_price", 112], ["stock_quote_change", -5], ["stock_volume", 10], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 32], ["stock_closing_price_yesterday", 32], ["stock_code", 8046], ["stock_company_url", "https://stock.wearn.com/a8046.html"], ["stock_day_high", 33], ["stock_day_low", 32], ["stock_name", "南電"], ["stock_opening_price", 32], ["stock_quote_change", 1], ["stock_volume", 10], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 21], ["stock_closing_price_yesterday", 21], ["stock_code", 2880], ["stock_company_url", "https://stock.wearn.com/a2880.html"], ["stock_day_high", 21], ["stock_day_low", 20], ["stock_name", "華南金"], ["stock_opening_price", 21], ["stock_quote_change", 0], ["stock_volume", 10], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 44], ["stock_closing_price_yesterday", 45], ["stock_code", 2633], ["stock_company_url", "https://stock.wearn.com/a2633.html"], ["stock_day_high", 45], ["stock_day_low", 44], ["stock_name", "台灣高鐵"], ["stock_opening_price", 45], ["stock_quote_change", -1], ["stock_volume", 10], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 48], ["stock_closing_price_yesterday", 48], ["stock_code", 8086], ["stock_company_url", "https://stock.wearn.com/a8086.html"], ["stock_day_high", 49], ["stock_day_low", 48], ["stock_name", "宏捷科"], ["stock_opening_price", 48], ["stock_quote_change", 0], ["stock_volume", 10], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 1], ["stock_closing_price_today", 158], ["stock_closing_price_yesterday", 157], ["stock_code", 2492], ["stock_company_url", "https://stock.wearn.com/a2492.html"], ["stock_day_high", 162], ["stock_day_low", 158], ["stock_name", "華新科"], ["stock_opening_price", 160], ["stock_quote_change", 0], ["stock_volume", 9], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 49], ["stock_closing_price_yesterday", 48], ["stock_code", 4915], ["stock_company_url", "https://stock.wearn.com/a4915.html"], ["stock_day_high", 50], ["stock_day_low", 48], ["stock_name", "致伸"], ["stock_opening_price", 48], ["stock_quote_change", 1], ["stock_volume", 8], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 59], ["stock_closing_price_yesterday", 60], ["stock_code", 3711], ["stock_company_url", "https://stock.wearn.com/a3711.html"], ["stock_day_high", 60], ["stock_day_low", 58], ["stock_name", "日月光投控"], ["stock_opening_price", 59], ["stock_quote_change", -1], ["stock_volume", 8], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 24], ["stock_closing_price_yesterday", 23], ["stock_code", 2823], ["stock_company_url", "https://stock.wearn.com/a2823.html"], ["stock_day_high", 24], ["stock_day_low", 23], ["stock_name", "中壽"], ["stock_opening_price", 23], ["stock_quote_change", 1], ["stock_volume", 8], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 21], ["stock_closing_price_yesterday", 21], ["stock_code", 1785], ["stock_company_url", "https://stock.wearn.com/a1785.html"], ["stock_day_high", 21], ["stock_day_low", 21], ["stock_name", "光洋科"], ["stock_opening_price", 21], ["stock_quote_change", 1], ["stock_volume", 8], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 78], ["stock_closing_price_yesterday", 77], ["stock_code", 5483], ["stock_company_url", "https://stock.wearn.com/a5483.html"], ["stock_day_high", 78], ["stock_day_low", 76], ["stock_name", "中美晶"], ["stock_opening_price", 78], ["stock_quote_change", 0], ["stock_volume", 8], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 20], ["stock_closing_price_yesterday", 20], ["stock_code", 2801], ["stock_company_url", "https://stock.wearn.com/a2801.html"], ["stock_day_high", 20], ["stock_day_low", 19], ["stock_name", "彰銀"], ["stock_opening_price", 19], ["stock_quote_change", 0], ["stock_volume", 7], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 37], ["stock_closing_price_yesterday", 37], ["stock_code", 2104], ["stock_company_url", "https://stock.wearn.com/a2104.html"], ["stock_day_high", 38], ["stock_day_low", 37], ["stock_name", "國際中橡"], ["stock_opening_price", 37], ["stock_quote_change", 0], ["stock_volume", 7], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 232], ["stock_closing_price_yesterday", 232], ["stock_code", 6462], ["stock_company_url", "https://stock.wearn.com/a6462.html"], ["stock_day_high", 234], ["stock_day_low", 228], ["stock_name", "神盾"], ["stock_opening_price", 232], ["stock_quote_change", 0], ["stock_volume", 7], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 22], ["stock_closing_price_yesterday", 22], ["stock_code", 3231], ["stock_company_url", "https://stock.wearn.com/a3231.html"], ["stock_day_high", 22], ["stock_day_low", 22], ["stock_name", "緯創"], ["stock_opening_price", 22], ["stock_quote_change", 1], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 65], ["stock_closing_price_yesterday", 64], ["stock_code", 6173], ["stock_company_url", "https://stock.wearn.com/a6173.html"], ["stock_day_high", 66], ["stock_day_low", 64], ["stock_name", "信昌電"], ["stock_opening_price", 65], ["stock_quote_change", 1], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 18], ["stock_closing_price_yesterday", 19], ["stock_code", 2367], ["stock_company_url", "https://stock.wearn.com/a2367.html"], ["stock_day_high", 19], ["stock_day_low", 18], ["stock_name", "燿華"], ["stock_opening_price", 19], ["stock_quote_change", 0], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 205], ["stock_closing_price_yesterday", 206], ["stock_code", 2379], ["stock_company_url", "https://stock.wearn.com/a2379.html"], ["stock_day_high", 210], ["stock_day_low", 204], ["stock_name", "瑞昱"], ["stock_opening_price", 204], ["stock_quote_change", 0], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 19], ["stock_closing_price_yesterday", 19], ["stock_code", 2324], ["stock_company_url", "https://stock.wearn.com/a2324.html"], ["stock_day_high", 19], ["stock_day_low", 19], ["stock_name", "仁寶"], ["stock_opening_price", 19], ["stock_quote_change", 0], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 1], ["stock_closing_price_today", 263], ["stock_closing_price_yesterday", 262], ["stock_code", 2327], ["stock_company_url", "https://stock.wearn.com/a2327.html"], ["stock_day_high", 267], ["stock_day_low", 262], ["stock_name", "國巨"], ["stock_opening_price", 263], ["stock_quote_change", 0], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", -2], ["stock_closing_price_today", 83], ["stock_closing_price_yesterday", 85], ["stock_code", 2383], ["stock_company_url", "https://stock.wearn.com/a2383.html"], ["stock_day_high", 86], ["stock_day_low", 83], ["stock_name", "台光電"], ["stock_opening_price", 86], ["stock_quote_change", -2], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 32], ["stock_closing_price_yesterday", 32], ["stock_code", 1402], ["stock_company_url", "https://stock.wearn.com/a1402.html"], ["stock_day_high", 33], ["stock_day_low", 32], ["stock_name", "遠東新"], ["stock_opening_price", 32], ["stock_quote_change", 0], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", -4], ["stock_closing_price_today", 113], ["stock_closing_price_yesterday", 117], ["stock_code", 3324], ["stock_company_url", "https://stock.wearn.com/a3324.html"], ["stock_day_high", 119], ["stock_day_low", 113], ["stock_name", "雙鴻"], ["stock_opening_price", 117], ["stock_quote_change", -3], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 1], ["stock_closing_price_today", 149], ["stock_closing_price_yesterday", 148], ["stock_code", 2308], ["stock_company_url", "https://stock.wearn.com/a2308.html"], ["stock_day_high", 151], ["stock_day_low", 149], ["stock_name", "台達電"], ["stock_opening_price", 150], ["stock_quote_change", 1], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 109], ["stock_closing_price_yesterday", 109], ["stock_code", 1301], ["stock_company_url", "https://stock.wearn.com/a1301.html"], ["stock_day_high", 109], ["stock_day_low", 108], ["stock_name", "台塑"], ["stock_opening_price", 109], ["stock_quote_change", 0], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 9], ["stock_closing_price_yesterday", 10], ["stock_code", 2841], ["stock_company_url", "https://stock.wearn.com/a2841.html"], ["stock_day_high", 10], ["stock_day_low", 9], ["stock_name", "台開"], ["stock_opening_price", 10], ["stock_quote_change", -2], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 29], ["stock_closing_price_yesterday", 29], ["stock_code", 5469], ["stock_company_url", "https://stock.wearn.com/a5469.html"], ["stock_day_high", 29], ["stock_day_low", 29], ["stock_name", "瀚宇博"], ["stock_opening_price", 29], ["stock_quote_change", 0], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", -2], ["stock_closing_price_today", 80], ["stock_closing_price_yesterday", 83], ["stock_code", 2377], ["stock_company_url", "https://stock.wearn.com/a2377.html"], ["stock_day_high", 83], ["stock_day_low", 80], ["stock_name", "微星"], ["stock_opening_price", 83], ["stock_quote_change", -3], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 14], ["stock_closing_price_yesterday", 14], ["stock_code", 1909], ["stock_company_url", "https://stock.wearn.com/a1909.html"], ["stock_day_high", 14], ["stock_day_low", 14], ["stock_name", "榮成"], ["stock_opening_price", 14], ["stock_quote_change", 1], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 10], ["stock_closing_price_yesterday", 10], ["stock_code", 5820], ["stock_company_url", "https://stock.wearn.com/a5820.html"], ["stock_day_high", 10], ["stock_day_low", 10], ["stock_name", "日盛金"], ["stock_opening_price", 10], ["stock_quote_change", 0], ["stock_volume", 4], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 73], ["stock_closing_price_yesterday", 74], ["stock_code", 2455], ["stock_company_url", "https://stock.wearn.com/a2455.html"], ["stock_day_high", 76], ["stock_day_low", 73], ["stock_name", "全新"], ["stock_opening_price", 74], ["stock_quote_change", -2], ["stock_volume", 4], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 78], ["stock_closing_price_yesterday", 78], ["stock_code", 1303], ["stock_company_url", "https://stock.wearn.com/a1303.html"], ["stock_day_high", 78], ["stock_day_low", 77], ["stock_name", "南亞"], ["stock_opening_price", 78], ["stock_quote_change", 0], ["stock_volume", 4], ["updated_at", Wed, 05 Jun 2019 02:44:16 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mTurnover Load (0.4ms)[0m  SELECT "turnovers".* FROM "turnovers" 
+Completed 200 OK in 603.9ms (Views: 25.5ms | ActiveRecord: 63.7ms)
+
+
+Started GET "/api/getAllTurnOverData" for 127.0.0.1 at 2019-06-05 10:45:03 +0800
+Processing by TurnoversController#show as HTML
+  [1m[36mTurnover Load (0.2ms)[0m  [1mSELECT "turnovers".* FROM "turnovers" WHERE "turnovers"."created_at" BETWEEN '2019-06-04 16:00:00.000000' AND '2019-06-05 15:59:59.999999'[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1401]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1402]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1403]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1404]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1405]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1406]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1407]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1408]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1409]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1410]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1411]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1412]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1413]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1414]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1415]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1416]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1417]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1418]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1419]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1420]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1421]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1422]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1423]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1424]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1425]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1426]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1427]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1428]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1429]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1430]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1431]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1432]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1433]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1434]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1435]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1436]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1437]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1438]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1439]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1440]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1441]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1442]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1443]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1444]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1445]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1446]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1447]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1448]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1449]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1450]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 21], ["stock_closing_price_yesterday", 20], ["stock_code", 2337], ["stock_company_url", "https://stock.wearn.com/a2337.html"], ["stock_day_high", 21], ["stock_day_low", 21], ["stock_name", "旺宏"], ["stock_opening_price", 21], ["stock_quote_change", 1], ["stock_volume", 51], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 13], ["stock_closing_price_yesterday", 13], ["stock_code", 2303], ["stock_company_url", "https://stock.wearn.com/a2303.html"], ["stock_day_high", 13], ["stock_day_low", 12], ["stock_name", "聯電"], ["stock_opening_price", 13], ["stock_quote_change", -1], ["stock_volume", 41], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 71], ["stock_closing_price_yesterday", 73], ["stock_code", 2317], ["stock_company_url", "https://stock.wearn.com/a2317.html"], ["stock_day_high", 73], ["stock_day_low", 71], ["stock_name", "鴻海"], ["stock_opening_price", 73], ["stock_quote_change", -2], ["stock_volume", 39], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 19], ["stock_closing_price_yesterday", 21], ["stock_code", 2371], ["stock_company_url", "https://stock.wearn.com/a2371.html"], ["stock_day_high", 21], ["stock_day_low", 19], ["stock_name", "大同"], ["stock_opening_price", 21], ["stock_quote_change", -8], ["stock_volume", 31], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 14], ["stock_closing_price_yesterday", 14], ["stock_code", 3049], ["stock_company_url", "https://stock.wearn.com/a3049.html"], ["stock_day_high", 14], ["stock_day_low", 14], ["stock_name", "和鑫"], ["stock_opening_price", 14], ["stock_quote_change", -2], ["stock_volume", 25], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 2], ["stock_closing_price_today", 178], ["stock_closing_price_yesterday", 176], ["stock_code", 3105], ["stock_company_url", "https://stock.wearn.com/a3105.html"], ["stock_day_high", 184], ["stock_day_low", 177], ["stock_name", "穩懋"], ["stock_opening_price", 178], ["stock_quote_change", 1], ["stock_volume", 25], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 32], ["stock_closing_price_yesterday", 32], ["stock_code", 3535], ["stock_company_url", "https://stock.wearn.com/a3535.html"], ["stock_day_high", 34], ["stock_day_low", 32], ["stock_name", "晶彩科"], ["stock_opening_price", 32], ["stock_quote_change", 2], ["stock_volume", 24], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 43], ["stock_closing_price_yesterday", 43], ["stock_code", 1101], ["stock_company_url", "https://stock.wearn.com/a1101.html"], ["stock_day_high", 44], ["stock_day_low", 43], ["stock_name", "台泥"], ["stock_opening_price", 43], ["stock_quote_change", 0], ["stock_volume", 23], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 30], ["stock_closing_price_yesterday", 31], ["stock_code", 2886], ["stock_company_url", "https://stock.wearn.com/a2886.html"], ["stock_day_high", 31], ["stock_day_low", 30], ["stock_name", "兆豐金"], ["stock_opening_price", 31], ["stock_quote_change", 0], ["stock_volume", 20], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 12], ["stock_closing_price_yesterday", 12], ["stock_code", 2890], ["stock_company_url", "https://stock.wearn.com/a2890.html"], ["stock_day_high", 12], ["stock_day_low", 12], ["stock_name", "永豐金"], ["stock_opening_price", 12], ["stock_quote_change", 0], ["stock_volume", 18], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 9], ["stock_closing_price_yesterday", 9], ["stock_code", 2883], ["stock_company_url", "https://stock.wearn.com/a2883.html"], ["stock_day_high", 9], ["stock_day_low", 9], ["stock_name", "開發金"], ["stock_opening_price", 9], ["stock_quote_change", 0], ["stock_volume", 17], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 17], ["stock_closing_price_yesterday", 17], ["stock_code", 2885], ["stock_company_url", "https://stock.wearn.com/a2885.html"], ["stock_day_high", 17], ["stock_day_low", 17], ["stock_name", "元大金"], ["stock_opening_price", 17], ["stock_quote_change", -1], ["stock_volume", 15], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 22], ["stock_closing_price_yesterday", 22], ["stock_code", 2892], ["stock_company_url", "https://stock.wearn.com/a2892.html"], ["stock_day_high", 22], ["stock_day_low", 22], ["stock_name", "第一金"], ["stock_opening_price", 22], ["stock_quote_change", 1], ["stock_volume", 14], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 16], ["stock_closing_price_yesterday", 16], ["stock_code", 1605], ["stock_company_url", "https://stock.wearn.com/a1605.html"], ["stock_day_high", 16], ["stock_day_low", 16], ["stock_name", "華新"], ["stock_opening_price", 16], ["stock_quote_change", 0], ["stock_volume", 13], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 124], ["stock_closing_price_yesterday", 125], ["stock_code", 3227], ["stock_company_url", "https://stock.wearn.com/a3227.html"], ["stock_day_high", 130], ["stock_day_low", 124], ["stock_name", "原相"], ["stock_opening_price", 126], ["stock_quote_change", 0], ["stock_volume", 13], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 23], ["stock_closing_price_yesterday", 23], ["stock_code", 2201], ["stock_company_url", "https://stock.wearn.com/a2201.html"], ["stock_day_high", 23], ["stock_day_low", 23], ["stock_name", "裕隆"], ["stock_opening_price", 23], ["stock_quote_change", 0], ["stock_volume", 12], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 14], ["stock_closing_price_yesterday", 14], ["stock_code", 2887], ["stock_company_url", "https://stock.wearn.com/a2887.html"], ["stock_day_high", 14], ["stock_day_low", 14], ["stock_name", "台新金"], ["stock_opening_price", 14], ["stock_quote_change", 0], ["stock_volume", 12], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 55], ["stock_closing_price_yesterday", 57], ["stock_code", 6147], ["stock_company_url", "https://stock.wearn.com/a6147.html"], ["stock_day_high", 57], ["stock_day_low", 55], ["stock_name", "頎邦"], ["stock_opening_price", 56], ["stock_quote_change", -2], ["stock_volume", 11], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", -6], ["stock_closing_price_today", 106], ["stock_closing_price_yesterday", 112], ["stock_code", 3630], ["stock_company_url", "https://stock.wearn.com/a3630.html"], ["stock_day_high", 113], ["stock_day_low", 106], ["stock_name", "新鉅科"], ["stock_opening_price", 112], ["stock_quote_change", -5], ["stock_volume", 10], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 32], ["stock_closing_price_yesterday", 32], ["stock_code", 8046], ["stock_company_url", "https://stock.wearn.com/a8046.html"], ["stock_day_high", 33], ["stock_day_low", 32], ["stock_name", "南電"], ["stock_opening_price", 32], ["stock_quote_change", 1], ["stock_volume", 10], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 21], ["stock_closing_price_yesterday", 21], ["stock_code", 2880], ["stock_company_url", "https://stock.wearn.com/a2880.html"], ["stock_day_high", 21], ["stock_day_low", 20], ["stock_name", "華南金"], ["stock_opening_price", 21], ["stock_quote_change", 0], ["stock_volume", 10], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 44], ["stock_closing_price_yesterday", 45], ["stock_code", 2633], ["stock_company_url", "https://stock.wearn.com/a2633.html"], ["stock_day_high", 45], ["stock_day_low", 44], ["stock_name", "台灣高鐵"], ["stock_opening_price", 45], ["stock_quote_change", -1], ["stock_volume", 10], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 48], ["stock_closing_price_yesterday", 48], ["stock_code", 8086], ["stock_company_url", "https://stock.wearn.com/a8086.html"], ["stock_day_high", 49], ["stock_day_low", 48], ["stock_name", "宏捷科"], ["stock_opening_price", 48], ["stock_quote_change", 0], ["stock_volume", 10], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 1], ["stock_closing_price_today", 158], ["stock_closing_price_yesterday", 157], ["stock_code", 2492], ["stock_company_url", "https://stock.wearn.com/a2492.html"], ["stock_day_high", 162], ["stock_day_low", 158], ["stock_name", "華新科"], ["stock_opening_price", 160], ["stock_quote_change", 0], ["stock_volume", 9], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 49], ["stock_closing_price_yesterday", 48], ["stock_code", 4915], ["stock_company_url", "https://stock.wearn.com/a4915.html"], ["stock_day_high", 50], ["stock_day_low", 48], ["stock_name", "致伸"], ["stock_opening_price", 48], ["stock_quote_change", 1], ["stock_volume", 8], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 59], ["stock_closing_price_yesterday", 60], ["stock_code", 3711], ["stock_company_url", "https://stock.wearn.com/a3711.html"], ["stock_day_high", 60], ["stock_day_low", 58], ["stock_name", "日月光投控"], ["stock_opening_price", 59], ["stock_quote_change", -1], ["stock_volume", 8], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 24], ["stock_closing_price_yesterday", 23], ["stock_code", 2823], ["stock_company_url", "https://stock.wearn.com/a2823.html"], ["stock_day_high", 24], ["stock_day_low", 23], ["stock_name", "中壽"], ["stock_opening_price", 23], ["stock_quote_change", 1], ["stock_volume", 8], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 21], ["stock_closing_price_yesterday", 21], ["stock_code", 1785], ["stock_company_url", "https://stock.wearn.com/a1785.html"], ["stock_day_high", 21], ["stock_day_low", 21], ["stock_name", "光洋科"], ["stock_opening_price", 21], ["stock_quote_change", 1], ["stock_volume", 8], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 78], ["stock_closing_price_yesterday", 77], ["stock_code", 5483], ["stock_company_url", "https://stock.wearn.com/a5483.html"], ["stock_day_high", 78], ["stock_day_low", 76], ["stock_name", "中美晶"], ["stock_opening_price", 78], ["stock_quote_change", 0], ["stock_volume", 8], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 20], ["stock_closing_price_yesterday", 20], ["stock_code", 2801], ["stock_company_url", "https://stock.wearn.com/a2801.html"], ["stock_day_high", 20], ["stock_day_low", 19], ["stock_name", "彰銀"], ["stock_opening_price", 19], ["stock_quote_change", 0], ["stock_volume", 7], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 37], ["stock_closing_price_yesterday", 37], ["stock_code", 2104], ["stock_company_url", "https://stock.wearn.com/a2104.html"], ["stock_day_high", 38], ["stock_day_low", 37], ["stock_name", "國際中橡"], ["stock_opening_price", 37], ["stock_quote_change", 0], ["stock_volume", 7], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 232], ["stock_closing_price_yesterday", 232], ["stock_code", 6462], ["stock_company_url", "https://stock.wearn.com/a6462.html"], ["stock_day_high", 234], ["stock_day_low", 228], ["stock_name", "神盾"], ["stock_opening_price", 232], ["stock_quote_change", 0], ["stock_volume", 7], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 22], ["stock_closing_price_yesterday", 22], ["stock_code", 3231], ["stock_company_url", "https://stock.wearn.com/a3231.html"], ["stock_day_high", 22], ["stock_day_low", 22], ["stock_name", "緯創"], ["stock_opening_price", 22], ["stock_quote_change", 1], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 65], ["stock_closing_price_yesterday", 64], ["stock_code", 6173], ["stock_company_url", "https://stock.wearn.com/a6173.html"], ["stock_day_high", 66], ["stock_day_low", 64], ["stock_name", "信昌電"], ["stock_opening_price", 65], ["stock_quote_change", 1], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 18], ["stock_closing_price_yesterday", 19], ["stock_code", 2367], ["stock_company_url", "https://stock.wearn.com/a2367.html"], ["stock_day_high", 19], ["stock_day_low", 18], ["stock_name", "燿華"], ["stock_opening_price", 19], ["stock_quote_change", 0], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 205], ["stock_closing_price_yesterday", 206], ["stock_code", 2379], ["stock_company_url", "https://stock.wearn.com/a2379.html"], ["stock_day_high", 210], ["stock_day_low", 204], ["stock_name", "瑞昱"], ["stock_opening_price", 204], ["stock_quote_change", 0], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 19], ["stock_closing_price_yesterday", 19], ["stock_code", 2324], ["stock_company_url", "https://stock.wearn.com/a2324.html"], ["stock_day_high", 19], ["stock_day_low", 19], ["stock_name", "仁寶"], ["stock_opening_price", 19], ["stock_quote_change", 0], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 1], ["stock_closing_price_today", 263], ["stock_closing_price_yesterday", 262], ["stock_code", 2327], ["stock_company_url", "https://stock.wearn.com/a2327.html"], ["stock_day_high", 267], ["stock_day_low", 262], ["stock_name", "國巨"], ["stock_opening_price", 263], ["stock_quote_change", 0], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", -2], ["stock_closing_price_today", 83], ["stock_closing_price_yesterday", 85], ["stock_code", 2383], ["stock_company_url", "https://stock.wearn.com/a2383.html"], ["stock_day_high", 86], ["stock_day_low", 83], ["stock_name", "台光電"], ["stock_opening_price", 86], ["stock_quote_change", -2], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 32], ["stock_closing_price_yesterday", 32], ["stock_code", 1402], ["stock_company_url", "https://stock.wearn.com/a1402.html"], ["stock_day_high", 33], ["stock_day_low", 32], ["stock_name", "遠東新"], ["stock_opening_price", 32], ["stock_quote_change", 0], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", -4], ["stock_closing_price_today", 113], ["stock_closing_price_yesterday", 117], ["stock_code", 3324], ["stock_company_url", "https://stock.wearn.com/a3324.html"], ["stock_day_high", 119], ["stock_day_low", 113], ["stock_name", "雙鴻"], ["stock_opening_price", 117], ["stock_quote_change", -3], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 1], ["stock_closing_price_today", 149], ["stock_closing_price_yesterday", 148], ["stock_code", 2308], ["stock_company_url", "https://stock.wearn.com/a2308.html"], ["stock_day_high", 151], ["stock_day_low", 149], ["stock_name", "台達電"], ["stock_opening_price", 150], ["stock_quote_change", 1], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 109], ["stock_closing_price_yesterday", 109], ["stock_code", 1301], ["stock_company_url", "https://stock.wearn.com/a1301.html"], ["stock_day_high", 109], ["stock_day_low", 108], ["stock_name", "台塑"], ["stock_opening_price", 109], ["stock_quote_change", 0], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 9], ["stock_closing_price_yesterday", 10], ["stock_code", 2841], ["stock_company_url", "https://stock.wearn.com/a2841.html"], ["stock_day_high", 10], ["stock_day_low", 9], ["stock_name", "台開"], ["stock_opening_price", 10], ["stock_quote_change", -2], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 29], ["stock_closing_price_yesterday", 29], ["stock_code", 5469], ["stock_company_url", "https://stock.wearn.com/a5469.html"], ["stock_day_high", 29], ["stock_day_low", 29], ["stock_name", "瀚宇博"], ["stock_opening_price", 29], ["stock_quote_change", 0], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", -2], ["stock_closing_price_today", 80], ["stock_closing_price_yesterday", 83], ["stock_code", 2377], ["stock_company_url", "https://stock.wearn.com/a2377.html"], ["stock_day_high", 83], ["stock_day_low", 80], ["stock_name", "微星"], ["stock_opening_price", 83], ["stock_quote_change", -3], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 14], ["stock_closing_price_yesterday", 14], ["stock_code", 1909], ["stock_company_url", "https://stock.wearn.com/a1909.html"], ["stock_day_high", 14], ["stock_day_low", 14], ["stock_name", "榮成"], ["stock_opening_price", 14], ["stock_quote_change", 1], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 10], ["stock_closing_price_yesterday", 10], ["stock_code", 5820], ["stock_company_url", "https://stock.wearn.com/a5820.html"], ["stock_day_high", 10], ["stock_day_low", 10], ["stock_name", "日盛金"], ["stock_opening_price", 10], ["stock_quote_change", 0], ["stock_volume", 4], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 73], ["stock_closing_price_yesterday", 74], ["stock_code", 2455], ["stock_company_url", "https://stock.wearn.com/a2455.html"], ["stock_day_high", 76], ["stock_day_low", 73], ["stock_name", "全新"], ["stock_opening_price", 74], ["stock_quote_change", -2], ["stock_volume", 4], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 78], ["stock_closing_price_yesterday", 78], ["stock_code", 1303], ["stock_company_url", "https://stock.wearn.com/a1303.html"], ["stock_day_high", 78], ["stock_day_low", 77], ["stock_name", "南亞"], ["stock_opening_price", 78], ["stock_quote_change", 0], ["stock_volume", 4], ["updated_at", Wed, 05 Jun 2019 02:45:03 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mTurnover Load (0.4ms)[0m  SELECT "turnovers".* FROM "turnovers" 
+Completed 200 OK in 518.2ms (Views: 0.1ms | ActiveRecord: 119.6ms)
+
+
+Started GET "/api/getAllTurnOverData" for 127.0.0.1 at 2019-06-05 10:49:32 +0800
+Processing by TurnoversController#show as HTML
+  [1m[36mTurnover Load (0.3ms)[0m  [1mSELECT "turnovers".* FROM "turnovers" WHERE "turnovers"."created_at" BETWEEN '2019-06-04 16:00:00.000000' AND '2019-06-05 15:59:59.999999'[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1451]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1452]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1453]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1454]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1455]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1456]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1457]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1458]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1459]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1460]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1461]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1462]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1463]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1464]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1465]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1466]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1467]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1468]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1469]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1470]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1471]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1472]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1473]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1474]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1475]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1476]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1477]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1478]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1479]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1480]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1481]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1482]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1483]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1484]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1485]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1486]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1487]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1488]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1489]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1490]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1491]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1492]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1493]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1494]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1495]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1496]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1497]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1498]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "turnovers" WHERE "turnovers"."id" = ?[0m  [["id", 1499]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "turnovers" WHERE "turnovers"."id" = ?  [["id", 1500]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 21], ["stock_closing_price_yesterday", 20], ["stock_code", 2337], ["stock_company_url", "https://stock.wearn.com/a2337.html"], ["stock_day_high", 21], ["stock_day_low", 21], ["stock_name", "旺宏"], ["stock_opening_price", 21], ["stock_quote_change", 1], ["stock_volume", 51], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 13], ["stock_closing_price_yesterday", 13], ["stock_code", 2303], ["stock_company_url", "https://stock.wearn.com/a2303.html"], ["stock_day_high", 13], ["stock_day_low", 12], ["stock_name", "聯電"], ["stock_opening_price", 13], ["stock_quote_change", -1], ["stock_volume", 41], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 71], ["stock_closing_price_yesterday", 73], ["stock_code", 2317], ["stock_company_url", "https://stock.wearn.com/a2317.html"], ["stock_day_high", 73], ["stock_day_low", 71], ["stock_name", "鴻海"], ["stock_opening_price", 73], ["stock_quote_change", -2], ["stock_volume", 39], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 19], ["stock_closing_price_yesterday", 21], ["stock_code", 2371], ["stock_company_url", "https://stock.wearn.com/a2371.html"], ["stock_day_high", 21], ["stock_day_low", 19], ["stock_name", "大同"], ["stock_opening_price", 21], ["stock_quote_change", -8], ["stock_volume", 31], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 14], ["stock_closing_price_yesterday", 14], ["stock_code", 3049], ["stock_company_url", "https://stock.wearn.com/a3049.html"], ["stock_day_high", 14], ["stock_day_low", 14], ["stock_name", "和鑫"], ["stock_opening_price", 14], ["stock_quote_change", -2], ["stock_volume", 25], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", 2], ["stock_closing_price_today", 178], ["stock_closing_price_yesterday", 176], ["stock_code", 3105], ["stock_company_url", "https://stock.wearn.com/a3105.html"], ["stock_day_high", 184], ["stock_day_low", 177], ["stock_name", "穩懋"], ["stock_opening_price", 178], ["stock_quote_change", 1], ["stock_volume", 25], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 32], ["stock_closing_price_yesterday", 32], ["stock_code", 3535], ["stock_company_url", "https://stock.wearn.com/a3535.html"], ["stock_day_high", 34], ["stock_day_low", 32], ["stock_name", "晶彩科"], ["stock_opening_price", 32], ["stock_quote_change", 2], ["stock_volume", 24], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 43], ["stock_closing_price_yesterday", 43], ["stock_code", 1101], ["stock_company_url", "https://stock.wearn.com/a1101.html"], ["stock_day_high", 44], ["stock_day_low", 43], ["stock_name", "台泥"], ["stock_opening_price", 43], ["stock_quote_change", 0], ["stock_volume", 23], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 30], ["stock_closing_price_yesterday", 31], ["stock_code", 2886], ["stock_company_url", "https://stock.wearn.com/a2886.html"], ["stock_day_high", 31], ["stock_day_low", 30], ["stock_name", "兆豐金"], ["stock_opening_price", 31], ["stock_quote_change", 0], ["stock_volume", 20], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 12], ["stock_closing_price_yesterday", 12], ["stock_code", 2890], ["stock_company_url", "https://stock.wearn.com/a2890.html"], ["stock_day_high", 12], ["stock_day_low", 12], ["stock_name", "永豐金"], ["stock_opening_price", 12], ["stock_quote_change", 0], ["stock_volume", 18], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (4.1ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 9], ["stock_closing_price_yesterday", 9], ["stock_code", 2883], ["stock_company_url", "https://stock.wearn.com/a2883.html"], ["stock_day_high", 9], ["stock_day_low", 9], ["stock_name", "開發金"], ["stock_opening_price", 9], ["stock_quote_change", 0], ["stock_volume", 17], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 17], ["stock_closing_price_yesterday", 17], ["stock_code", 2885], ["stock_company_url", "https://stock.wearn.com/a2885.html"], ["stock_day_high", 17], ["stock_day_low", 17], ["stock_name", "元大金"], ["stock_opening_price", 17], ["stock_quote_change", -1], ["stock_volume", 15], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 22], ["stock_closing_price_yesterday", 22], ["stock_code", 2892], ["stock_company_url", "https://stock.wearn.com/a2892.html"], ["stock_day_high", 22], ["stock_day_low", 22], ["stock_name", "第一金"], ["stock_opening_price", 22], ["stock_quote_change", 1], ["stock_volume", 14], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 16], ["stock_closing_price_yesterday", 16], ["stock_code", 1605], ["stock_company_url", "https://stock.wearn.com/a1605.html"], ["stock_day_high", 16], ["stock_day_low", 16], ["stock_name", "華新"], ["stock_opening_price", 16], ["stock_quote_change", 0], ["stock_volume", 13], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 124], ["stock_closing_price_yesterday", 125], ["stock_code", 3227], ["stock_company_url", "https://stock.wearn.com/a3227.html"], ["stock_day_high", 130], ["stock_day_low", 124], ["stock_name", "原相"], ["stock_opening_price", 126], ["stock_quote_change", 0], ["stock_volume", 13], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 23], ["stock_closing_price_yesterday", 23], ["stock_code", 2201], ["stock_company_url", "https://stock.wearn.com/a2201.html"], ["stock_day_high", 23], ["stock_day_low", 23], ["stock_name", "裕隆"], ["stock_opening_price", 23], ["stock_quote_change", 0], ["stock_volume", 12], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 14], ["stock_closing_price_yesterday", 14], ["stock_code", 2887], ["stock_company_url", "https://stock.wearn.com/a2887.html"], ["stock_day_high", 14], ["stock_day_low", 14], ["stock_name", "台新金"], ["stock_opening_price", 14], ["stock_quote_change", 0], ["stock_volume", 12], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 55], ["stock_closing_price_yesterday", 57], ["stock_code", 6147], ["stock_company_url", "https://stock.wearn.com/a6147.html"], ["stock_day_high", 57], ["stock_day_low", 55], ["stock_name", "頎邦"], ["stock_opening_price", 56], ["stock_quote_change", -2], ["stock_volume", 11], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", -6], ["stock_closing_price_today", 106], ["stock_closing_price_yesterday", 112], ["stock_code", 3630], ["stock_company_url", "https://stock.wearn.com/a3630.html"], ["stock_day_high", 113], ["stock_day_low", 106], ["stock_name", "新鉅科"], ["stock_opening_price", 112], ["stock_quote_change", -5], ["stock_volume", 10], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 32], ["stock_closing_price_yesterday", 32], ["stock_code", 8046], ["stock_company_url", "https://stock.wearn.com/a8046.html"], ["stock_day_high", 33], ["stock_day_low", 32], ["stock_name", "南電"], ["stock_opening_price", 32], ["stock_quote_change", 1], ["stock_volume", 10], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 21], ["stock_closing_price_yesterday", 21], ["stock_code", 2880], ["stock_company_url", "https://stock.wearn.com/a2880.html"], ["stock_day_high", 21], ["stock_day_low", 20], ["stock_name", "華南金"], ["stock_opening_price", 21], ["stock_quote_change", 0], ["stock_volume", 10], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 44], ["stock_closing_price_yesterday", 45], ["stock_code", 2633], ["stock_company_url", "https://stock.wearn.com/a2633.html"], ["stock_day_high", 45], ["stock_day_low", 44], ["stock_name", "台灣高鐵"], ["stock_opening_price", 45], ["stock_quote_change", -1], ["stock_volume", 10], ["updated_at", Wed, 05 Jun 2019 02:49:32 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 48], ["stock_closing_price_yesterday", 48], ["stock_code", 8086], ["stock_company_url", "https://stock.wearn.com/a8086.html"], ["stock_day_high", 49], ["stock_day_low", 48], ["stock_name", "宏捷科"], ["stock_opening_price", 48], ["stock_quote_change", 0], ["stock_volume", 10], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 1], ["stock_closing_price_today", 158], ["stock_closing_price_yesterday", 157], ["stock_code", 2492], ["stock_company_url", "https://stock.wearn.com/a2492.html"], ["stock_day_high", 162], ["stock_day_low", 158], ["stock_name", "華新科"], ["stock_opening_price", 160], ["stock_quote_change", 0], ["stock_volume", 9], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 49], ["stock_closing_price_yesterday", 48], ["stock_code", 4915], ["stock_company_url", "https://stock.wearn.com/a4915.html"], ["stock_day_high", 50], ["stock_day_low", 48], ["stock_name", "致伸"], ["stock_opening_price", 48], ["stock_quote_change", 1], ["stock_volume", 8], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 59], ["stock_closing_price_yesterday", 60], ["stock_code", 3711], ["stock_company_url", "https://stock.wearn.com/a3711.html"], ["stock_day_high", 60], ["stock_day_low", 58], ["stock_name", "日月光投控"], ["stock_opening_price", 59], ["stock_quote_change", -1], ["stock_volume", 8], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 24], ["stock_closing_price_yesterday", 23], ["stock_code", 2823], ["stock_company_url", "https://stock.wearn.com/a2823.html"], ["stock_day_high", 24], ["stock_day_low", 23], ["stock_name", "中壽"], ["stock_opening_price", 23], ["stock_quote_change", 1], ["stock_volume", 8], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 21], ["stock_closing_price_yesterday", 21], ["stock_code", 1785], ["stock_company_url", "https://stock.wearn.com/a1785.html"], ["stock_day_high", 21], ["stock_day_low", 21], ["stock_name", "光洋科"], ["stock_opening_price", 21], ["stock_quote_change", 1], ["stock_volume", 8], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 78], ["stock_closing_price_yesterday", 77], ["stock_code", 5483], ["stock_company_url", "https://stock.wearn.com/a5483.html"], ["stock_day_high", 78], ["stock_day_low", 76], ["stock_name", "中美晶"], ["stock_opening_price", 78], ["stock_quote_change", 0], ["stock_volume", 8], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 20], ["stock_closing_price_yesterday", 20], ["stock_code", 2801], ["stock_company_url", "https://stock.wearn.com/a2801.html"], ["stock_day_high", 20], ["stock_day_low", 19], ["stock_name", "彰銀"], ["stock_opening_price", 19], ["stock_quote_change", 0], ["stock_volume", 7], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 37], ["stock_closing_price_yesterday", 37], ["stock_code", 2104], ["stock_company_url", "https://stock.wearn.com/a2104.html"], ["stock_day_high", 38], ["stock_day_low", 37], ["stock_name", "國際中橡"], ["stock_opening_price", 37], ["stock_quote_change", 0], ["stock_volume", 7], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 232], ["stock_closing_price_yesterday", 232], ["stock_code", 6462], ["stock_company_url", "https://stock.wearn.com/a6462.html"], ["stock_day_high", 234], ["stock_day_low", 228], ["stock_name", "神盾"], ["stock_opening_price", 232], ["stock_quote_change", 0], ["stock_volume", 7], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 22], ["stock_closing_price_yesterday", 22], ["stock_code", 3231], ["stock_company_url", "https://stock.wearn.com/a3231.html"], ["stock_day_high", 22], ["stock_day_low", 22], ["stock_name", "緯創"], ["stock_opening_price", 22], ["stock_quote_change", 1], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 65], ["stock_closing_price_yesterday", 64], ["stock_code", 6173], ["stock_company_url", "https://stock.wearn.com/a6173.html"], ["stock_day_high", 66], ["stock_day_low", 64], ["stock_name", "信昌電"], ["stock_opening_price", 65], ["stock_quote_change", 1], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 18], ["stock_closing_price_yesterday", 19], ["stock_code", 2367], ["stock_company_url", "https://stock.wearn.com/a2367.html"], ["stock_day_high", 19], ["stock_day_low", 18], ["stock_name", "燿華"], ["stock_opening_price", 19], ["stock_quote_change", 0], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 205], ["stock_closing_price_yesterday", 206], ["stock_code", 2379], ["stock_company_url", "https://stock.wearn.com/a2379.html"], ["stock_day_high", 210], ["stock_day_low", 204], ["stock_name", "瑞昱"], ["stock_opening_price", 204], ["stock_quote_change", 0], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 19], ["stock_closing_price_yesterday", 19], ["stock_code", 2324], ["stock_company_url", "https://stock.wearn.com/a2324.html"], ["stock_day_high", 19], ["stock_day_low", 19], ["stock_name", "仁寶"], ["stock_opening_price", 19], ["stock_quote_change", 0], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 1], ["stock_closing_price_today", 263], ["stock_closing_price_yesterday", 262], ["stock_code", 2327], ["stock_company_url", "https://stock.wearn.com/a2327.html"], ["stock_day_high", 267], ["stock_day_low", 262], ["stock_name", "國巨"], ["stock_opening_price", 263], ["stock_quote_change", 0], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", -2], ["stock_closing_price_today", 83], ["stock_closing_price_yesterday", 85], ["stock_code", 2383], ["stock_company_url", "https://stock.wearn.com/a2383.html"], ["stock_day_high", 86], ["stock_day_low", 83], ["stock_name", "台光電"], ["stock_opening_price", 86], ["stock_quote_change", -2], ["stock_volume", 6], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 32], ["stock_closing_price_yesterday", 32], ["stock_code", 1402], ["stock_company_url", "https://stock.wearn.com/a1402.html"], ["stock_day_high", 33], ["stock_day_low", 32], ["stock_name", "遠東新"], ["stock_opening_price", 32], ["stock_quote_change", 0], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", -4], ["stock_closing_price_today", 113], ["stock_closing_price_yesterday", 117], ["stock_code", 3324], ["stock_company_url", "https://stock.wearn.com/a3324.html"], ["stock_day_high", 119], ["stock_day_low", 113], ["stock_name", "雙鴻"], ["stock_opening_price", 117], ["stock_quote_change", -3], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 1], ["stock_closing_price_today", 149], ["stock_closing_price_yesterday", 148], ["stock_code", 2308], ["stock_company_url", "https://stock.wearn.com/a2308.html"], ["stock_day_high", 151], ["stock_day_low", 149], ["stock_name", "台達電"], ["stock_opening_price", 150], ["stock_quote_change", 1], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 109], ["stock_closing_price_yesterday", 109], ["stock_code", 1301], ["stock_company_url", "https://stock.wearn.com/a1301.html"], ["stock_day_high", 109], ["stock_day_low", 108], ["stock_name", "台塑"], ["stock_opening_price", 109], ["stock_quote_change", 0], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 9], ["stock_closing_price_yesterday", 10], ["stock_code", 2841], ["stock_company_url", "https://stock.wearn.com/a2841.html"], ["stock_day_high", 10], ["stock_day_low", 9], ["stock_name", "台開"], ["stock_opening_price", 10], ["stock_quote_change", -2], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 29], ["stock_closing_price_yesterday", 29], ["stock_code", 5469], ["stock_company_url", "https://stock.wearn.com/a5469.html"], ["stock_day_high", 29], ["stock_day_low", 29], ["stock_name", "瀚宇博"], ["stock_opening_price", 29], ["stock_quote_change", 0], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", -2], ["stock_closing_price_today", 80], ["stock_closing_price_yesterday", 83], ["stock_code", 2377], ["stock_company_url", "https://stock.wearn.com/a2377.html"], ["stock_day_high", 83], ["stock_day_low", 80], ["stock_name", "微星"], ["stock_opening_price", 83], ["stock_quote_change", -3], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 14], ["stock_closing_price_yesterday", 14], ["stock_code", 1909], ["stock_company_url", "https://stock.wearn.com/a1909.html"], ["stock_day_high", 14], ["stock_day_low", 14], ["stock_name", "榮成"], ["stock_opening_price", 14], ["stock_quote_change", 1], ["stock_volume", 5], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 10], ["stock_closing_price_yesterday", 10], ["stock_code", 5820], ["stock_company_url", "https://stock.wearn.com/a5820.html"], ["stock_day_high", 10], ["stock_day_low", 10], ["stock_name", "日盛金"], ["stock_opening_price", 10], ["stock_quote_change", 0], ["stock_volume", 4], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", -1], ["stock_closing_price_today", 73], ["stock_closing_price_yesterday", 74], ["stock_code", 2455], ["stock_company_url", "https://stock.wearn.com/a2455.html"], ["stock_day_high", 76], ["stock_day_low", 73], ["stock_name", "全新"], ["stock_opening_price", 74], ["stock_quote_change", -2], ["stock_volume", 4], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "turnovers" ("created_at", "stock_change", "stock_closing_price_today", "stock_closing_price_yesterday", "stock_code", "stock_company_url", "stock_day_high", "stock_day_low", "stock_name", "stock_opening_price", "stock_quote_change", "stock_volume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00], ["stock_change", 0], ["stock_closing_price_today", 78], ["stock_closing_price_yesterday", 78], ["stock_code", 1303], ["stock_company_url", "https://stock.wearn.com/a1303.html"], ["stock_day_high", 78], ["stock_day_low", 77], ["stock_name", "南亞"], ["stock_opening_price", 78], ["stock_quote_change", 0], ["stock_volume", 4], ["updated_at", Wed, 05 Jun 2019 02:49:33 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mTurnover Load (3.3ms)[0m  SELECT "turnovers".* FROM "turnovers" 
+Completed 200 OK in 592.4ms (Views: 0.1ms | ActiveRecord: 135.2ms)
+
+
+Started GET "/api/getAllDate" for 127.0.0.1 at 2019-06-05 10:49:35 +0800
+Processing by TurnoversController#get_all_date as HTML
+  [1m[36mTurnover Load (1.1ms)[0m  [1mSELECT DISTINCT created_at FROM "turnovers" [0m
+Completed 200 OK in 15.0ms (Views: 13.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/getAllDate" for 127.0.0.1 at 2019-06-05 10:53:55 +0800
+Processing by TurnoversController#get_all_date as HTML
+  [1m[35mTurnover Load (0.2ms)[0m  SELECT DISTINCT created_at FROM "turnovers" 
+Completed 200 OK in 34.5ms (Views: 33.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/getAllDate" for 127.0.0.1 at 2019-06-05 10:53:56 +0800
+Processing by TurnoversController#get_all_date as HTML
+  [1m[36mTurnover Load (1.5ms)[0m  [1mSELECT DISTINCT created_at FROM "turnovers" [0m
+Completed 200 OK in 14.2ms (Views: 12.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/getAllDate" for 127.0.0.1 at 2019-06-05 10:53:57 +0800
+Processing by TurnoversController#get_all_date as HTML
+  [1m[35mTurnover Load (0.8ms)[0m  SELECT DISTINCT created_at FROM "turnovers" 
+Completed 200 OK in 10.2ms (Views: 9.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/getAllDate" for 127.0.0.1 at 2019-06-05 10:58:16 +0800
+Processing by TurnoversController#get_all_date as HTML
+Completed 500 Internal Server Error in 6.5ms
+
+SystemStackError (stack level too deep):
+  app/controllers/turnovers_controller.rb:20:in `get_all_date'
+
+
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.0ms)
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.0ms)
+
+
+Started GET "/api/getAllDate" for 127.0.0.1 at 2019-06-05 10:58:32 +0800
+
+SyntaxError (/Users/chuijie.qiu/Desktop/ror-practice/app/models/turnover.rb:22: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/turnovers_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.7ms)
+
+
+Started GET "/api/getAllDate" for 127.0.0.1 at 2019-06-05 10:58:43 +0800
+Processing by TurnoversController#get_all_date as HTML
+Completed 500 Internal Server Error in 6.3ms
+
+SystemStackError (stack level too deep):
+  app/controllers/turnovers_controller.rb:20:in `get_all_date'
+
+
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.3ms)
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.7ms)
+
+
+Started GET "/api/getAllDate" for 127.0.0.1 at 2019-06-05 10:59:50 +0800
+Processing by TurnoversController#get_all_date as HTML
+  [1m[36mTurnover Load (0.2ms)[0m  [1mSELECT created_at FROM "turnovers" [0m
+Completed 200 OK in 16.2ms (Views: 14.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/getAllDate" for 127.0.0.1 at 2019-06-05 11:00:28 +0800
+Processing by TurnoversController#get_all_date as HTML
+  [1m[35mTurnover Load (0.3ms)[0m  SELECT DISTINCT created_at FROM "turnovers" 
+Completed 200 OK in 14.1ms (Views: 13.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/getAllDate" for 127.0.0.1 at 2019-06-05 11:03:26 +0800
+
+SyntaxError (/Users/chuijie.qiu/Desktop/ror-practice/app/controllers/turnovers_controller.rb:26: syntax error, unexpected end-of-input, expecting keyword_end):
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.22.1) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.22.1) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.22.1) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.7) lib/rack/etag.rb:23:in `call'
+  rack (1.4.7) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.22.1) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.22.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `_run__1393067041985388796__call__2690068005401543393__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.1) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.1) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.1) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/2.3.0/webrick/server.rb:314:in `block in start_thread'
+
+
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.1ms)
+
+
+Started GET "/api/getAllDates" for 127.0.0.1 at 2019-06-05 11:03:33 +0800
+
+ActionController::RoutingError (No route matches [GET] "/api/getAllDates"):
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.1) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.1) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.1) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/2.3.0/webrick/server.rb:314:in `block in start_thread'
+
+
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/api/getAllDates" for 127.0.0.1 at 2019-06-05 11:03:45 +0800
+
+ActionController::RoutingError (No route matches [GET] "/api/getAllDates"):
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.1) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.1) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.1) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/2.3.0/webrick/server.rb:314:in `block in start_thread'
+
+
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/api/getAllDate" for 127.0.0.1 at 2019-06-05 11:03:51 +0800
+
+SyntaxError (/Users/chuijie.qiu/Desktop/ror-practice/app/controllers/turnovers_controller.rb:26: syntax error, unexpected end-of-input, expecting keyword_end):
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.22.1) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.22.1) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.22.1) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.7) lib/rack/etag.rb:23:in `call'
+  rack (1.4.7) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.22.1) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.22.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `_run__1393067041985388796__call__2690068005401543393__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.1) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.1) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.1) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/2.3.0/webrick/server.rb:314:in `block in start_thread'
+
+
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.2ms)
+
+
+Started GET "/api/getAllDate" for 127.0.0.1 at 2019-06-05 11:05:03 +0800
+Processing by TurnoversController#get_all_dates as HTML
+  [1m[36mTurnover Load (0.3ms)[0m  [1mSELECT DISTINCT created_at FROM "turnovers" [0m
+Completed 200 OK in 16.1ms (Views: 14.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/getAllCode" for 127.0.0.1 at 2019-06-05 11:05:08 +0800
+Processing by TurnoversController#get_all_codes as HTML
+Completed 500 Internal Server Error in 18.5ms
+
+NoMethodError (undefined method `get_all_codes' for #<Class:0x00007fe2e660fa88>
+Did you mean?  get_all_dates):
+  app/controllers/turnovers_controller.rb:24:in `get_all_codes'
+
+
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.7ms)
+
+
+Started GET "/api/getAllCode" for 127.0.0.1 at 2019-06-05 11:05:40 +0800
+Processing by TurnoversController#get_all_codes as HTML
+Completed 500 Internal Server Error in 1.9ms
+
+TypeError (Cannot visit Arel::Nodes::Distinct):
+  app/controllers/turnovers_controller.rb:25:in `get_all_codes'
+
+
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/chuijie.qiu/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.9ms)
+
+
+Started GET "/api/getAllCode" for 127.0.0.1 at 2019-06-05 11:05:51 +0800
+Processing by TurnoversController#get_all_codes as HTML
+  [1m[35mTurnover Load (0.3ms)[0m  SELECT stock_code FROM "turnovers" ORDER BY "turnovers"."stock_code"
+Completed 200 OK in 17.5ms (Views: 15.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/getAllDate" for 127.0.0.1 at 2019-06-05 11:09:12 +0800
+Processing by TurnoversController#get_all_dates as HTML
+  [1m[36mTurnover Load (0.4ms)[0m  [1mSELECT DISTINCT created_at FROM "turnovers" [0m
+Completed 200 OK in 12.7ms (Views: 11.9ms | ActiveRecord: 0.4ms)
