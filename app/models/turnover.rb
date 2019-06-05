@@ -6,14 +6,10 @@ class Turnover < ActiveRecord::Base
         Turnover.select('DISTINCT created_at')
     end 
 
-    def self.get_all_stock_code
-        Turnover.select('DISTINCT stock_code').order(:stock_code)
+    def self.get_all_stock_codes
+        Turnover.select('stock_code').order(:stock_code)
     end
 
-    def self.get_all_stock_name
-        Turnover.select('DISTINCT stock_name')
-    end
-    
     def self.filter_turnover_record(date = nil, code = nil)
        if code.nil?
         Turnover.where(created_at: date.to_time.beginning_of_day..date.to_time.end_of_day)
