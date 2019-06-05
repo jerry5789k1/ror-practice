@@ -3,18 +3,6 @@ require 'pry'
 require 'open-uri'
 
 class WebCrawler < ActiveRecord::Base
-  #  attr_accessible :stock_change, 
-  #                  :stock_closing_price_today, 
-  #                  :stock_closing_price_yesterday, 
-  #                  :stock_code, 
-  #                  :stock_company_url, 
-  #                  :stock_day_high, 
-  #                  :stock_day_low, 
-  #                  :stock_name, 
-  #                  :stock_opening_price, 
-  #                  :stock_quote_change,
-  #                  :stock_volume
-  # attr_accessible :title, :body
     def self.craw_stocks_turnover_data_from_web
       unparsed_url = open('https://stock.wearn.com/qua.asp')
       .read.force_encoding('big5')
@@ -56,10 +44,10 @@ class WebCrawler < ActiveRecord::Base
           stock_quote_change: stock_quote_change,
         }
       end
-      stocks.first(50)
+      stocks.first(50) #return first 50 record of the stocks, total was 100 
     end
     
-    def self.save_stocks_turnover_data(stocks_data=[])
+    def self.save_new_stocks_turnover_data(stocks_data=[])
         stocks_data.each do |stock|
           Turnover.create(stock)
         end
@@ -71,6 +59,6 @@ class WebCrawler < ActiveRecord::Base
 
     def self.update_new_stocks_turnover_data_to_db
        remove_old_stocks_turnover_data
-       save_stocks_turnover_data(craw_stocks_turnover_data_from_web)
+       save_new_stocks_turnover_data(craw_stocks_turnover_data_from_web)
     end
 end
