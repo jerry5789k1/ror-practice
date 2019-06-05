@@ -4,7 +4,7 @@ class TurnoversController < ApplicationController
 
     def show
        WebCrawler.update_new_stocks_turnover_data_to_db
-       @turnovers = Turnover.all
+       @turnovers = Turnover.last(50)
        @turnovers = @turnovers.to_json.gsub(/\\u([0-9a-z]{4})/){|s| [$1.to_i(16)].pack("U")} #解碼中文
        render json: @turnovers
     end
