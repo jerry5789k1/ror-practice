@@ -4,7 +4,10 @@ RorPractice::Application.routes.draw do
   root :to => 'turnovers#index'
   
   scope '/api' do 
-    get 'getAllTurnoverRecords' => 'turnovers#show'
+    get 'getAllTurnOverData' => 'turnovers#show'
+    get 'getFilterTurnOverData/date/:date/code/:code' => 'turnovers#filter'
+    get 'getAllDate' => 'turnovers#get_all_dates'
+    get 'getAllCode' => 'turnovers#get_all_codes'
   end
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
