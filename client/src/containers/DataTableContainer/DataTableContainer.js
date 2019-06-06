@@ -8,11 +8,15 @@ export default class DataTableContainer extends React.Component {
     componentDidMount = () => {
         axios.get('api/getAllTurnOverData').then(res => this.setState({turnOverData: res.data}))
     }
+
+    getSortingData = (code= '') => {
+        axios.get(`api/sort/${code}`).then(res => this.setState({turnOverData: res.data}))
+    }    
     render() {
         const { turnOverData } = this.state
         return (
             <React.Fragment>
-               <DataTable turnOverData={ turnOverData }/>
+               <DataTable turnOverData={ turnOverData } getSortingData={this.getSortingData}/>
             </React.Fragment>
         );
     }
