@@ -1,25 +1,38 @@
 import React from 'react';
 import DataRecord from '../DataRecord/DataRecord';
+import HeaderButton from '../Utils/common/HeaderButton/HeaderButton';
 import './DataTable.scss'
 
-const DATA_TABLEHEADER_CONTENT = ['排','代號', '名稱', '開盤價', '最高價', '最低價', '昨收盤', '今收盤', '成交量','漲跌','漲跌幅']
-
+const DATATABLE_HEADER_COLUMN_DATA = [
+    {content: '排', code: 'RANK'},
+    {content: '代號', code: 'STOCK_CODE'},
+    {content: '名稱', code: 'STOCK_NAME'},
+    {content: '開盤價', code: 'STOCK_OPENING_PRICE'},
+    {content: '最高價', code: 'STOCK_DAY_HIGH'},
+    {content: '最低價', code: 'STOCK_DAY_LOW'},
+    {content: '昨收盤', code: 'STOCK_CLOSING_PRICE_YES'},
+    {content: '今收盤', code: 'STOCK_CLOSING_PRICE_TODAY'},
+    {content: '成交量', code: 'STOCK_VOLUME'},
+    {content: '漲跌', code: 'STOCK_CHANGE'},
+    {content: '漲跌幅', code: 'STOCK_QUOTE_CHANGE'},
+]
 const DataTable = (props) => {
-    const dataTableHeader = DATA_TABLEHEADER_CONTENT.map((content, i) => {
-        return <div className="data_column" key={`${i}-${content}`}>{content}</div>
+    const dataTableHeader = DATATABLE_HEADER_COLUMN_DATA.map((column, i) => {
+        let {content, code} = column
+        return < HeaderButton key={`${i}-${code}`} code={code} content={content} clicked={props.getSortingData}/>
     })
     const displayRecord = props.turnOverData.map((record, i)=> {
         return <DataRecord record={record} key={i} index={i}/>
     })
     return (
-        <React.Fragment>
+        <div className="data_table_wrapper">
             <div className="data_table_header">
                 {dataTableHeader}
             </div>
-            <div>
+            <div className="data_table_record_container">
                {displayRecord}
             </div>
-        </React.Fragment>
+        </div>
     );
 }
 export default DataTable

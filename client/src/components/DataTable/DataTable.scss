@@ -1,10 +1,12 @@
-.data_table_header {
-    display: flex;
-    justify-content: space-evenly;
-    .data_column {
-        border:1px solid;
-        width: 100%;
-        text-align: center;
-        background-color: #f1f0f0;
+.data_table_wrapper {
+    width: 80%;
+    margin: auto;
+    .data_table_header {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .data_table_record_container {
+        height: 600px;
+        overflow-y: scroll;
     }
 }
