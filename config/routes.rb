@@ -8,6 +8,7 @@ RorPractice::Application.routes.draw do
     get 'getFilterTurnOverData/date/:date/code/:code' => 'turnovers#filter'
     get 'getAllDate' => 'turnovers#get_all_dates'
     get 'getAllCode' => 'turnovers#get_all_codes'
+    get 'sort/:sort_type' => 'turnovers#sort'
   end
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
