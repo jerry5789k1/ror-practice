@@ -1,6 +1,6 @@
 import React from 'react';
 import DataRecord from '../DataRecord/DataRecord';
-import HeaderButton from '../Utils/common/HeaderButton/HeaderButton';
+import HeaderButton from './component/HeaderButton/HeaderButton';
 import './DataTable.scss'
 
 const DATATABLE_HEADER_COLUMN_DATA = [
