@@ -21,7 +21,6 @@ const DataRecord = ({record, index}) => {
             return `- ${value}`
         }
     }   
-    console.log(record)
     return (
        <div className="datarecord-wrapper">
            <div className="record-column">{index + 1 }</div>
