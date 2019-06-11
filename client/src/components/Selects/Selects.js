@@ -12,12 +12,12 @@ const propTypes = {
     type: PropTypes.string,
 };
 const defaultProps = {
-    value: "",
-    title: "",
+    value: '',
+    title: '',
     changed: () => {},
     options: [],
-    class: "",
-    type: "",
+    class: '',
+    type: '',
 };
 
  const Selects = (props) => {
@@ -28,7 +28,7 @@ const defaultProps = {
         <React.Fragment>
             <h3>{props.title}:</h3>
             <Select className={props.class} value={props.value} onChange={(e)=> props.changed(e.target.value,props.type)}>
-                <MenuItem value="">無</MenuItem>
+                <MenuItem value=''>無</MenuItem>
                 {options? options : null}
             </Select>
         </React.Fragment>
