@@ -9,6 +9,7 @@ gem 'sqlite3', '~> 1.3.5'
 gem 'pry', '~> 0.12.2'
 gem 'pry-byebug', '~> 3.0'
 gem 'nokogiri', '~>1.7.0'
+gem 'whenever'
 
 # Gems used only for assets and not required
 # in production environments by default.

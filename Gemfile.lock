@@ -31,6 +31,7 @@ GEM
     arel (3.0.3)
     builder (3.0.4)
     byebug (11.0.1)
+    chronic (0.10.2)
     coderay (1.1.2)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -118,6 +119,8 @@ GEM
     tzinfo (0.3.55)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
+    whenever (0.11.0)
+      chronic (>= 0.6.3)
 
 PLATFORMS
   ruby
@@ -132,6 +135,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sqlite3 (~> 1.3.5)
   uglifier (>= 1.0.3)
+  whenever
 
 BUNDLED WITH
    1.17.3
