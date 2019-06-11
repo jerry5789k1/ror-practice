@@ -1,7 +1,18 @@
 import React from 'react';
 import DataRecord from '../DataRecord/DataRecord';
 import HeaderButton from './components/HeaderButton/HeaderButton';
+import PropTypes from 'prop-types';
 import './DataTable.scss'
+
+const propTypes = {
+    turnOverData: PropTypes.array,
+    getSortingData: PropTypes.func,
+};
+const defaultProps = {
+    turnOverData:[],
+    getSortingData: ()=>{},
+};
+
 
 const DATATABLE_HEADER_COLUMN_DATA = [
     {content: '排', code: 'RANK'},
@@ -35,4 +46,7 @@ const DataTable = (props) => {
         </div>
     );
 }
+DataTable.propTypes = propTypes;
+DataTable.defaultProps = defaultProps;
+
 export default DataTable

@@ -1,6 +1,24 @@
 import React from 'react';
 import Selects from '../Selects/Selects'; 
+import PropTypes from 'prop-types';
 import './SelectsGroup.scss';
+
+const propTypes = {
+    options: PropTypes.object,
+    date: PropTypes.string,
+    stockCode: PropTypes.string,
+    handleChange: PropTypes.func,
+};
+const defaultProps = {
+    options: {
+        stockCodeOptions:[],
+        dateOptions:[],
+    },
+    date:"",
+    stockCode:"",
+    handleChange: ()=>{},
+};
+
 const SelectsGroup = (props) => {
     return (
         <div className="selects-group-container">
@@ -20,4 +38,12 @@ const SelectsGroup = (props) => {
     );
 }
 
+SelectsGroup.propTypes = propTypes;
+SelectsGroup.defaultProps = defaultProps;
+
 export default SelectsGroup
+
+
+
+
+ 

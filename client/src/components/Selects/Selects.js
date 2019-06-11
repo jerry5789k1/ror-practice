@@ -1,6 +1,24 @@
 import React from 'react';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import PropTypes from 'prop-types';
+
+const propTypes = {
+    value: PropTypes.string,
+    title: PropTypes.string,
+    changed: PropTypes.func,
+    options: PropTypes.array,
+    class: PropTypes.string,
+    type: PropTypes.string,
+};
+const defaultProps = {
+    value: "",
+    title: "",
+    changed: () => {},
+    options: [],
+    class: "",
+    type: "",
+};
 
  const Selects = (props) => {
     const options = props.options.map((option, i)=> {
@@ -16,5 +34,8 @@ import MenuItem from '@material-ui/core/MenuItem';
         </React.Fragment>
     );
 }
+
+Selects.propTypes = propTypes;
+Selects.defaultProps = defaultProps;
 
 export default Selects;

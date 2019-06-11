@@ -1,5 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './DataRecord.scss';
+
+const propTypes = {
+    record: PropTypes.object,
+    index: PropTypes.any,
+};
+const defaultProps = {
+   record: {
+     stock_code:'',
+     stock_name:'',
+     stock_opening_price:'',
+     stock_day_high:'',
+     stock_day_low:'',
+     stock_closing_price_yesterday:'',
+     stock_closing_price_today:'',
+     stock_volume:'',
+     stock_change:'',
+     stock_quote_change:'',
+   },
+   index: 0,
+};
 
 const DataRecord = ({record, index}) => {
     const getStockChangeStyle = (stock_change_value) => {
@@ -37,5 +58,8 @@ const DataRecord = ({record, index}) => {
        </div>
     );
 }
+
+DataRecord.propTypes = propTypes;
+DataRecord.defaultProps = defaultProps;
 
 export default DataRecord
