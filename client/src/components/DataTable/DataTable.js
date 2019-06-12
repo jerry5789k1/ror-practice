@@ -1,6 +1,6 @@
 import React from 'react';
 import DataRecord from '../DataRecord/DataRecord';
-import HeaderButton from './components/HeaderButton/HeaderButton';
+import HeaderButton from './HeaderButton/HeaderButton';
 import PropTypes from 'prop-types';
 import './DataTable.scss';
 
