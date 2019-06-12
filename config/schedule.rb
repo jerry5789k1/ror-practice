@@ -16,9 +16,12 @@
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
 # end
-set :output, 'log/cron_log.log'
-every 1.day, at: [ '10:00 am'] do
-  runner 'WebCrawler.update_new_stocks_turnover_data_to_db'
-end
 
 # Learn more: http://github.com/javan/whenever
+set :output, "log/cron_log.log"
+set :environment, :development # accroding to development.sqlite3
+env :PATH, ENV['PATH'] #set the path to rbenv or it will show error /bin/sh: bundle: command not found
+set :job_template, nil 
+every 1.day, at: '10:00 am' do
+   runner 'WebCrawler.update_new_stocks_turnover_data_to_db'
+end
