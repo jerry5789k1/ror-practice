@@ -4,14 +4,14 @@ require 'open-uri'
 
 class WebCrawler < ActiveRecord::Base
     def self.craw_stocks_turnover_data_from_web
-      unparsed_url = open('https://stock.wearn.com/qua.asp')
+      page_raw_content = open('https://stock.wearn.com/qua.asp')
       .read.force_encoding('big5')
       .encode!('utf-8', undef: :replace, replace: '?', invalid: :replace) # encode chinese character from garbled
-      parsed_page = Nokogiri::HTML(unparsed_url) #parsing webdata 
+      parsed_content = Nokogiri::HTML(page_raw_content) #parsing webdata 
 
-      table = parsed_page.css('.stockalllistbg2, stockalllistbg1')
-      stocks = table.map do |rows|
-        cells = rows.css('td')
+      table = parsed_content.css('.stockalllistbg2, stockalllistbg1')
+      stocks = table.map do |row|
+        cells = row.css('td')
         stock_code = cells[1].text.strip
         stock_name = cells[2].text.strip
         stock_company_url = cells[2].css('a')[0]['href'].strip
@@ -60,5 +60,6 @@ class WebCrawler < ActiveRecord::Base
     def self.update_new_stocks_turnover_data_to_db
        remove_old_stocks_turnover_data
        save_new_stocks_turnover_data(craw_stocks_turnover_data_from_web)
+       binding.pry
     end
 end
