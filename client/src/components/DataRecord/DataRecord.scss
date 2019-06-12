@@ -1,0 +1,20 @@
+.datarecord-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 35px;
+    .record-column {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1.5px solid #e8f0fc;
+        height: 35px;
+    }
+    .quote-change-down {
+        color: #ec008c; //#009900
+    }
+    .quote-change-up {
+        color: #009900;
+    }
+}
