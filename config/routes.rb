@@ -4,13 +4,11 @@ RorPractice::Application.routes.draw do
   root :to => 'turnovers#index'
   
   scope '/api' do 
-    get 'getAllTurnOverData' => 'turnovers#show'
-    get 'getFilterTurnOverData/date/:date/code/:code' => 'turnovers#filter_by_all'
-    get 'getFilterTurnOverDataByDate/date/:date' => 'turnovers#filter_by_date'
-    get 'getFilterTurnOverDataByCode/code/:code' => 'turnovers#filter_by_code'
+    get 'getAllTurnOverData' => 'turnovers#index'
+    get 'filterOrSorting' => 'turnovers#filter_or_sort'
     get 'getAllDate' => 'turnovers#get_all_dates'
     get 'getAllCode' => 'turnovers#get_all_codes'
-    get 'sort/:sort_type' => 'turnovers#sort'
+    get 'crawl' => 'turnovers#crawl'
   end
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
