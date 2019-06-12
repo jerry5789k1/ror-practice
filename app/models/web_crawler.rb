@@ -60,6 +60,5 @@ class WebCrawler < ActiveRecord::Base
     def self.update_new_stocks_turnover_data_to_db
        remove_old_stocks_turnover_data
        save_new_stocks_turnover_data(craw_stocks_turnover_data_from_web)
-       binding.pry
     end
 end
