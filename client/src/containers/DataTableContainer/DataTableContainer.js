@@ -1,7 +1,7 @@
-import React from "react";
-import axios from "axios";
-import DataTable from "../../components/DataTable/DataTable";
-import SelectsGroup from "../../components/SelectsGroup/SelectsGroup";
+import React from 'react';
+import axios from 'axios';
+import DataTable from '../../components/DataTable/DataTable';
+import SelectsGroup from '../../components/SelectsGroup/SelectsGroup';
 
 export default class DataTableContainer extends React.Component {
   constructor(props) {
@@ -10,8 +10,8 @@ export default class DataTableContainer extends React.Component {
       turnOverData: [],
       dateOptions: [],
       stockCodeOptions: [],
-      date: "",
-      stock_code: ""
+      date: '',
+      stock_code: '',
     };
   }
 
@@ -40,19 +40,19 @@ export default class DataTableContainer extends React.Component {
     }
   };
 
-  filteredByCode = stock_code => {
+  filteredByCode = (stock_code) => {
     axios
-      .get(`api/getFilterTurnOverDataByCode/code/${stock_code}`)
+      .get(`api/filterOrSorting?code=${stock_code}`)
       .then(res => this.setState({ turnOverData: res.data }));
   };
-  filteredByDate = date => {
+  filteredByDate = (date) => {
     axios
-      .get(`api/getFilterTurnOverDataByDate/date/${date}`)
+      .get(`api/filterOrSorting?date=${date}`)
       .then(res => this.setState({ turnOverData: res.data }));
   };
   filteredByBoth = (date, stock_code) => {
     axios
-      .get(`api/getFilterTurnOverData/date/${date}/code/${stock_code}`)
+      .get(`api/filterOrSorting?date=${date}&code=${stock_code}`)
       .then(res => this.setState({ turnOverData: res.data }));
   };
   getAllTurnOverData = () => {
@@ -61,9 +61,9 @@ export default class DataTableContainer extends React.Component {
       .then(res => this.setState({ turnOverData: res.data }));
   };
 
-  getSortingData = dataType => {
+  getSortingData = (dataType) => {
     axios
-      .get(`api/sort/${dataType}`)
+      .get(`api/filterOrSorting?action_type=SORTING&sort_type=${dataType}`)
       .then(res => this.setState({ turnOverData: res.data }));
   };
 
