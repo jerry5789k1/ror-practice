@@ -1,5 +1,5 @@
 import React from 'react';
-import Selects from '../Selects/Selects';
+import DropDownSelect from '../DropDownSelect/DropdownSelect';
 import PropTypes from 'prop-types';
 import './SelectsGroup.scss';
 
@@ -22,7 +22,7 @@ const defaultProps = {
 const SelectsGroup = (props) => {
   return (
     <div className='selects-group-container'>
-      <Selects
+      <DropDownSelect
         value={props.stockCode}
         title='代號'
         changed={props.handleChange}
@@ -30,7 +30,7 @@ const SelectsGroup = (props) => {
         class='stock-code-select'
         type='stock_code'
       />
-      <Selects
+      <DropDownSelect
         value={props.date}
         title='日期'
         changed={props.handleChange}

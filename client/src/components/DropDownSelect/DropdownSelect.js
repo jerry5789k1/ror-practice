@@ -20,7 +20,7 @@ const defaultProps = {
     type: '',
 };
 
- const Selects = (props) => {
+ const DropDownSelect = (props) => {
     const options = props.options.map((option, i)=> {
         return  <MenuItem key={i} value={option[props.type]}>{option[props.type]}</MenuItem>
     })
@@ -35,7 +35,7 @@ const defaultProps = {
     );
 }
 
-Selects.propTypes = propTypes;
-Selects.defaultProps = defaultProps;
+DropDownSelect.propTypes = propTypes;
+DropDownSelect.defaultProps = defaultProps;
 
-export default Selects;
+export default DropDownSelect;
